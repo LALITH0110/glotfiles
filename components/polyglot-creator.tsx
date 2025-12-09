@@ -127,7 +127,7 @@ export default function PolyglotCreator({ config, type }: PolyglotCreatorProps) 
 
       let response
       try {
-        response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL || 'http://159.65.176.246'}/api/generate-polyglot`, {
+        response = await fetch(`${process.env.NEXT_PUBLIC_API_BASE_URL}/api/generate-polyglot`, {
           method: 'POST',
           body: formData
         })

@@ -188,7 +188,7 @@ export default function HomePage() {
             </div>
             <div className="flex items-center gap-4">
               <Link
-                href="https://github.com/LALITH0110"
+                href="https://github.com/LALITH0110/glotfiles"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="flex items-center gap-1 text-gray-600 hover:text-gray-900 transition-colors"
