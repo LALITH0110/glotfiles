@@ -3,8 +3,10 @@
 > **glotfiles.dev** - The only online platform to create polyglot files (multi-format files that are valid in multiple formats simultaneously)
 
 [![Live Site](https://img.shields.io/badge/Live%20Site-glotfiles.dev-blue)](https://glotfiles.dev)
+[![Python](https://img.shields.io/badge/Python-3.x-3776AB?logo=python&logoColor=white)](https://www.python.org/)
+[![Nginx](https://img.shields.io/badge/Nginx-Latest-009639?logo=nginx&logoColor=white)](https://nginx.org/)
+[![DigitalOcean](https://img.shields.io/badge/DigitalOcean-Droplet-0080FF?logo=digitalocean&logoColor=white)](https://www.digitalocean.com/)
 [![Frontend](https://img.shields.io/badge/Frontend-Next.js%2015-black)](https://nextjs.org/)
-[![React](https://img.shields.io/badge/React-19-61dafb)](https://react.dev/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
 
 ## 🐛 Reporting Issues & Bugs
@@ -49,23 +51,28 @@ The frontend communicates with a separate backend API for file processing. The b
 
 ### 📦 Supported Polyglot Combinations
 
-1. **PDF + Video + Image + ZIP** - Quadruple polyglot
-2. **PDF + Video + ZIP** - Triple polyglot
-3. **ZIP + Video + Image** - Triple polyglot
-4. **Image + Video + PDF** - Triple polyglot
-5. **PDF + Image** - Dual polyglot
-6. **Image + ZIP** - Dual polyglot
-7. **PDF + ZIP** - Dual polyglot
-8. **PDF + Video** - Dual polyglot
-9. **ZIP + Video** - Dual polyglot
-10. **Image + Video** - Dual polyglot
+| Combination | Files Required | Output Format | Use Case |
+|------------|----------------|---------------|----------|
+| **PDF + HTML** | 2 | Dual | Documents that render as webpages |
+| **PDF + Image** | 2 | Dual | Documents with image thumbnails |
+| **Image + ZIP** | 2 | Dual | Images containing hidden archives |
+| **PDF + ZIP** | 2 | Dual | Documents with embedded files |
+| **PDF + Video** | 2 | MP4 | Documents that play as video |
+| **ZIP + Video** | 2 | MP4 | Archives that play as video |
+| **Image + Video** | 2 | MP4 | Images that play as video |
+| **PDF + Video + ZIP** | 3 | MP4 | Triple-format files |
+| **ZIP + Video + Image** | 3 | MP4 | Triple-format files |
+| **Image + Video + PDF** | 3 | MP4 | Triple-format files |
+| **PDF + Video + Image + ZIP** | 4 | MP4 | Ultimate polyglot |
 
-### 🎯 Supported File Types
+### File Size Limits
 
-- **PDF** - Up to 50MB
-- **Images** - PNG, JPG (Up to 25MB)
-- **Videos** - MP4 (Up to 100MB)
-- **Archives** - ZIP (Up to 100MB)
+| File Type | Max Size | Supported Extensions |
+|-----------|----------|---------------------|
+| PDF | 50 MB | `.pdf` |
+| Images | 25 MB | `.png`, `.jpg`, `.jpeg` |
+| Videos | 100 MB | `.mp4`, `.mov`, `.avi` |
+| Archives | 100 MB | `.zip` |
 
 ---
 
@@ -81,10 +88,13 @@ The frontend communicates with a separate backend API for file processing. The b
 - **Analytics**: Firebase Firestore + Google Analytics
 
 ### Backend (Separate Repository - Closed Source)
-- Handles file processing and polyglot generation
-- Exposes REST API endpoint: `/api/generate-polyglot`
-- Processes files in memory (no persistent storage)
-- Returns generated polyglot file as download
+- **Language**: Python 3.x
+- **Web Server**: Nginx (reverse proxy)
+- **Hosting**: DigitalOcean Droplet
+- **Functionality**: Handles file processing and polyglot generation
+- **API**: Exposes REST API endpoint: `/api/generate-polyglot`
+- **Processing**: Files are processed in memory (no persistent storage)
+- **Output**: Returns generated polyglot file as download
 
 ---
 
