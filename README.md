@@ -9,7 +9,7 @@
 [![Frontend](https://img.shields.io/badge/Frontend-Next.js%2015-black)](https://nextjs.org/)
 [![TypeScript](https://img.shields.io/badge/TypeScript-5-blue)](https://www.typescriptlang.org/)
 
-## 🐛 Reporting Issues & Bugs
+## Reporting Issues & Bugs
 
 Found a bug on **glotfiles.dev**? You are in the right place!
 
@@ -20,36 +20,36 @@ We use this repository as the **central issue tracker** for the entire project, 
 Since the [Backend API code is currently closed-source](https://glotfiles.dev), please report **all** issues (Server Errors, 500s, or Generation Failures) right here in the [Issues tab](../../issues).
 
 **Before reporting:**
-- ✅ Check if the issue has already been reported
-- ✅ Try refreshing the page and clearing your browser cache
-- ✅ Ensure your files meet the size requirements
+- Check if the issue has already been reported
+- Try refreshing the page and clearing your browser cache
+- Ensure your files meet the size requirements
 
 **When reporting, please include:**
-- 🐛 Description of the bug
-- 📝 Steps to reproduce
-- 🖼️ Screenshots (if applicable)
-- 🌐 Browser and OS information
-- 📦 File types and sizes you were trying to combine
+- Description of the bug
+- Steps to reproduce
+- Screenshots (if applicable)
+- Browser and OS information
+- File types and sizes you were trying to combine
 
 ---
 
-## 📖 About
+## About
 
 **Polyglot File Generator** is a web application that creates polyglot files - files that are valid in multiple formats simultaneously. This repository contains the **frontend** code built with Next.js, React, and TypeScript.
 
 The frontend communicates with a separate backend API for file processing. The backend API is currently closed-source.
 
-### 🌟 Features
+### Features
 
-- 🎨 **Modern UI** - Beautiful, responsive design with Tailwind CSS
-- 📁 **Multiple Combinations** - Support for 10+ polyglot file combinations
-- 🚀 **Fast Processing** - Efficient file generation via backend API
-- 🔒 **Privacy-First** - Files are processed in memory and never stored
-- 📊 **Analytics** - Track polyglot file generation count via Firebase
-- ♿ **Accessible** - Built with accessibility in mind
-- 📱 **Responsive** - Works seamlessly on desktop, tablet, and mobile
+- **Modern UI** - Beautiful, responsive design with Tailwind CSS
+- **Multiple Combinations** - Support for 10+ polyglot file combinations
+- **Fast Processing** - Efficient file generation via backend API
+- **Privacy-First** - Files are processed in memory and never stored
+- **Analytics** - Track polyglot file generation count via Firebase
+- **Accessible** - Built with accessibility in mind
+- **Responsive** - Works seamlessly on desktop, tablet, and mobile
 
-### 📦 Supported Polyglot Combinations
+### Supported Polyglot Combinations
 
 | Combination | Files Required | Output Format | Use Case |
 |------------|----------------|---------------|----------|
@@ -76,7 +76,7 @@ The frontend communicates with a separate backend API for file processing. The b
 
 ---
 
-## 🏗️ Architecture
+## Architecture
 
 ### Frontend (This Repository)
 - **Framework**: Next.js 15.2.6
@@ -99,7 +99,7 @@ The frontend communicates with a separate backend API for file processing. The b
 ---
 
 
-## 🔒 Privacy & Security
+## Privacy & Security
 
 - **No File Storage**: Files are processed in memory only and immediately discarded
 - **No Personal Data**: We only collect anonymous usage statistics
@@ -108,25 +108,13 @@ The frontend communicates with a separate backend API for file processing. The b
 
 ---
 
-## 🤝 Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-1. Fork the repository
-2. Create your feature branch (`git checkout -b feature/AmazingFeature`)
-3. Commit your changes (`git commit -m 'Add some AmazingFeature'`)
-4. Push to the branch (`git push origin feature/AmazingFeature`)
-5. Open a Pull Request
-
----
-
-## 📄 License
+## License
 
 This project is private. All rights reserved.
 
 ---
 
-## 👤 Author
+## Author
 
 **Lalith Kothuru**
 
@@ -134,30 +122,23 @@ This project is private. All rights reserved.
 - Email: [lalith.kothuru@gmail.com](mailto:lalith.kothuru@gmail.com)
 - GitHub: [@LALITH0110](https://github.com/LALITH0110)
 
----
-
-## 🙏 Acknowledgments
-
-- [Next.js](https://nextjs.org/) team for the amazing framework
-- [shadcn](https://twitter.com/shadcn) for the beautiful component library
-- All contributors and users of glotfiles.dev
 
 ---
 
-## 📊 Project Status
+## Project Status
 
-✅ **Active Development** - Regularly maintained and updated
+**Active Development** - Regularly maintained and updated
 
 **Live Site**: [glotfiles.dev](https://glotfiles.dev)
 
 ---
 
-## 📞 Support
+## Support
 
 For issues, questions, or suggestions:
-- 🐛 [Report a Bug](../../issues)
-- 💬 [Contact Me](mailto:lalith.kothuru@gmail.com)
-- 🌐 [Visit the Site](https://glotfiles.dev)
+- [Report a Bug](../../issues)
+- [Contact Me](mailto:lalith.kothuru@gmail.com)
+- [Visit the Site](https://glotfiles.dev)
 
 ---
 
