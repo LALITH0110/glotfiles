@@ -157,7 +157,7 @@ export default function HomePage() {
                 <Archive className="w-6 h-6 text-green-600" />
               </div>
               <h3 className="text-xl font-semibold mb-2">Space Efficient</h3>
-              <p className="text-gray-600">Combine multiple files without increasing total size</p>
+              <p className="text-gray-600">One downloadable file instead of multiple attachments</p>
             </div>
             <div className="p-6">
               <div className="w-12 h-12 bg-purple-100 rounded-lg flex items-center justify-center mx-auto mb-4">
