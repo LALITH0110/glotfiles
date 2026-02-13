@@ -1,7 +1,7 @@
 import Link from "next/link"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
-import { FileImage, Archive, FileText, Video, Music, Volume2, Github, ExternalLink, Mail } from 'lucide-react'
+import { FileImage, Archive, FileText, Video, Music, Volume2, Github, ExternalLink, Mail, BookOpen } from 'lucide-react'
 
 const polyglotTypes = [
   {
@@ -203,6 +203,16 @@ export default function HomePage() {
               >
                 <Mail className="w-4 h-4" />
                 Contact Me
+              </Link>
+              <span className="text-gray-400">|</span>
+              <Link
+                href="https://app.glotfiles.dev/docs"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="flex items-center gap-1 text-gray-600 hover:text-gray-900 transition-colors"
+              >
+                <BookOpen className="w-4 h-4" />
+                API & Docs
               </Link>
               <span className="text-gray-400">|</span>
               <Link href="/privacy-terms" className="hover:text-gray-900 transition-colors">
