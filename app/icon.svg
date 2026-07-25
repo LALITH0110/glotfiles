@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="glotfiles">
+  <rect width="32" height="32" rx="7.5" fill="#0A0A0A"/>
+  <rect x="5.5" y="4" width="13.5" height="18" rx="2.4" fill="#FF5C35"/>
+  <path d="M15.4 9.5h6.2l4.9 4.9v11.2A2.4 2.4 0 0 1 24.1 28h-8.7A2.4 2.4 0 0 1 13 25.6V11.9a2.4 2.4 0 0 1 2.4-2.4Z" fill="#fff" stroke="#0A0A0A" stroke-width="2.4" stroke-linejoin="round"/>
+  <path d="M21.6 9.5 26.5 14.4h-4.9Z" fill="#FF5C35"/>
+</svg>

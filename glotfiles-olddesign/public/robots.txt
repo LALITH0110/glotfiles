@@ -1,0 +1,16 @@
+User-agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api/private
+
+# Crawl delay
+Crawl-delay: 1
+
+# Sitemap location
+Sitemap: https://glotfiles.dev/sitemap.xml
+
+# Notes for crawlers:
+# Polyglot file generator - only online platform for multi-format files
+# Supports PDF, Video, Image, ZIP combinations
+# Any combination between them is possible
+# Create different polyglot files (like pdf+zip, pdf+image,etc)

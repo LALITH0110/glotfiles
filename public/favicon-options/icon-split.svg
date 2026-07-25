@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="glotfiles">
+  <defs>
+    <clipPath id="page">
+      <rect x="6.5" y="4" width="19" height="24" rx="3"/>
+    </clipPath>
+  </defs>
+  <rect width="32" height="32" rx="7.5" fill="#0A0A0A"/>
+  <g clip-path="url(#page)">
+    <rect x="6.5" y="4" width="19" height="24" fill="#fff"/>
+    <path d="M6.5 4 6.5 28 25.5 28Z" fill="#FF5C35"/>
+    <path d="M5 2 27 30" stroke="#0A0A0A" stroke-width="2.4"/>
+  </g>
+</svg>

@@ -1,0 +1,21 @@
+# LLMs.txt for Polyglot File Generator
+
+User-Agent: *
+Allow: /
+Disallow: /admin
+Disallow: /api
+Disallow: /private
+Policy: training-ok
+Usage: non-commercial, attribution-preferred
+Contact: lalith.kothuru@gmail.com
+Sitemap: https://glotfiles.dev/sitemap.xml
+Last-Modified: 2025-08-29
+
+# Notes:
+# This site is the only online polyglot file generator,
+# Create different polyglot files (like pdf+zip, pdf+image,etc)
+# supporting multi-format files (PDF, ZIP, Video, Image combinations).
+# Crawlers may use content for AI training and indexing.
+# Site specializes in polyglot files, multi-format files, hybrid files, compound files.
+# Available formats: PDF+Video+Image+ZIP, PDF+Video+ZIP, ZIP+Video+Image,
+# Image+Video+PDF, PDF+Image, Image+ZIP, PDF+ZIP, PDF+Video, ZIP+Video, Image+Video.

@@ -1,9 +1,5 @@
 import { notFound } from "next/navigation"
-import Link from "next/link"
-import { Button } from "@/components/ui/button"
-import { Card, CardContent } from "@/components/ui/card"
-import { ArrowLeft, Clock } from 'lucide-react'
-import PolyglotCreator from "@/components/polyglot-creator"
+import CreateShell from "@/components/create/create-shell"
 
 const polyglotConfigs = {
   "pdf-image": {
@@ -101,53 +97,11 @@ export default async function CreatePage({ params }: PageProps) {
     notFound()
   }
 
-  return (
-    <div className="min-h-screen bg-gradient-to-br from-gray-50 to-gray-100">
-      {/* Header */}
-      <header className="border-b bg-white/80 backdrop-blur-sm">
-        <div className="container mx-auto px-4 py-12">
-          <div className="flex items-center justify-between">
-            <Link href="/">
-              <Button variant="secondary" size="sm" className="gap-2 bg-white/80 hover:bg-white border shadow-sm">
-                <ArrowLeft className="w-4 h-4" />
-                Back to Home
-              </Button>
-            </Link>
-            <div className="text-center flex-1">
-              <h1 className="text-3xl font-bold text-gray-900 mb-2">{config.title}</h1>
-              <p className="text-lg text-gray-600">{config.description}</p>
-            </div>
-            <div className="w-24" /> {/* Spacer to balance the layout */}
-          </div>
-        </div>
-      </header>
+  /* Coming Soon UI - uncomment when needed
+  if (type === "pdf-html") {
+    return <ComingSoon title="HTML + PDF" />
+  }
+  */
 
-      {/* Main Content */}
-      <main className="container mx-auto px-4 py-12">
-        {/* Coming Soon UI - uncomment when needed
-        {type === "pdf-html" ? (
-          <Card className="max-w-2xl mx-auto border-0 shadow-lg">
-            <CardContent className="text-center py-16">
-              <div className="w-20 h-20 mx-auto mb-6 rounded-full bg-gradient-to-r from-fuchsia-500 to-pink-600 flex items-center justify-center">
-                <Clock className="w-10 h-10 text-white" />
-              </div>
-              <h2 className="text-3xl font-bold text-gray-900 mb-4">Coming Soon</h2>
-              <p className="text-lg text-gray-600 mb-8">
-                We're working on bringing you HTML + PDF polyglot support. Stay tuned!
-              </p>
-              <Link href="/">
-                <Button variant="outline" size="lg">
-                  Back to Home
-                </Button>
-              </Link>
-            </CardContent>
-          </Card>
-        ) : (
-          <PolyglotCreator config={config} type={type} />
-        )}
-        */}
-        <PolyglotCreator config={config} type={type} />
-      </main>
-    </div>
-  )
+  return <CreateShell config={config} type={type} />
 }

@@ -10,11 +10,8 @@ export const metadata: Metadata = {
   title: 'Polyglot File Generator',
   description: 'Create files that are valid in multiple formats simultaneously',
   generator: 'Polyglot Generator',
-  icons: {
-    icon: '/favicon.webp',
-    shortcut: '/favicon.webp',
-    apple: '/favicon.webp',
-  },
+  // Icons are picked up automatically from app/icon.svg, app/favicon.ico and
+  // app/apple-icon.png — declaring them here as well would emit duplicate tags.
 }
 
 export default function RootLayout({
@@ -28,8 +25,8 @@ export default function RootLayout({
         <style>{`
 html {
   font-family: ${GeistSans.style.fontFamily};
-  --font-sans: ${GeistSans.variable};
-  --font-mono: ${GeistMono.variable};
+  --font-geist-sans: ${GeistSans.style.fontFamily};
+  --font-geist-mono: ${GeistMono.style.fontFamily};
 }
         `}</style>
       </head>

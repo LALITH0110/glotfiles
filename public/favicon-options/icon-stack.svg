@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32" width="32" height="32" role="img" aria-label="glotfiles">
+  <rect width="32" height="32" rx="7.5" fill="#FF5C35"/>
+  <path d="M16 5.5 25.5 10.5 16 15.5 6.5 10.5Z" fill="#fff"/>
+  <path d="M7 17.6 16 22.2 25 17.6" fill="none" stroke="#fff" stroke-width="2.7" stroke-linecap="round" stroke-linejoin="round"/>
+</svg>
