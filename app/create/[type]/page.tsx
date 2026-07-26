@@ -1,5 +1,7 @@
+import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import CreateShell from "@/components/create/create-shell"
+import { SITE_URL } from "@/app/layout"
 
 const polyglotConfigs = {
   "pdf-image": {
@@ -89,6 +91,54 @@ interface PageProps {
   params: Promise<{ type: string }>
 }
 
+/** Pre-render every combination at build time instead of on first request. */
+export function generateStaticParams() {
+  return Object.keys(polyglotConfigs).map((type) => ({ type }))
+}
+
+/**
+ * Each combination gets its own title, description and canonical. Previously all
+ * of these pages inherited the root layout's metadata, so every one of them
+ * shipped an identical <title> and description — leaving Google no way to tell
+ * them apart. The strings already existed in polyglotConfigs; they just weren't
+ * wired up.
+ */
+export async function generateMetadata({ params }: PageProps): Promise<Metadata> {
+  const { type } = await params
+  const config = polyglotConfigs[type as keyof typeof polyglotConfigs]
+
+  if (!config) {
+    return { title: 'Combination not found' }
+  }
+
+  const url = `/create/${type}`
+  // The layout template appends " · glotfiles", so keep the raw combo title here.
+  const title = config.title
+  const description = `${config.description}. Free, in your browser — no account, no installs, and your files are never stored.`
+
+  return {
+    title,
+    description,
+    alternates: { canonical: url },
+    openGraph: {
+      type: 'website',
+      siteName: 'glotfiles',
+      url,
+      title: `${title} · glotfiles`,
+      description,
+      // Declaring `openGraph` on a page stops Next inheriting the root
+      // app/opengraph-image.tsx, so point at it explicitly.
+      images: [{ url: '/opengraph-image', width: 1200, height: 630, alt: `${title} · glotfiles` }],
+    },
+    twitter: {
+      card: 'summary_large_image',
+      title: `${title} · glotfiles`,
+      description,
+      images: ['/opengraph-image'],
+    },
+  }
+}
+
 export default async function CreatePage({ params }: PageProps) {
   const { type } = await params
   const config = polyglotConfigs[type as keyof typeof polyglotConfigs]
@@ -103,5 +153,38 @@ export default async function CreatePage({ params }: PageProps) {
   }
   */
 
-  return <CreateShell config={config} type={type} />
+  const pageUrl = `${SITE_URL}/create/${type}`
+  const jsonLd = {
+    '@context': 'https://schema.org',
+    '@graph': [
+      {
+        '@type': 'BreadcrumbList',
+        itemListElement: [
+          { '@type': 'ListItem', position: 1, name: 'Home', item: `${SITE_URL}/` },
+          { '@type': 'ListItem', position: 2, name: config.title, item: pageUrl },
+        ],
+      },
+      {
+        '@type': 'WebApplication',
+        '@id': `${pageUrl}#software`,
+        name: config.title,
+        url: pageUrl,
+        description: config.description,
+        applicationCategory: 'UtilitiesApplication',
+        operatingSystem: 'Any (runs entirely in the browser)',
+        isPartOf: { '@id': `${SITE_URL}/#software` },
+        offers: { '@type': 'Offer', price: '0', priceCurrency: 'USD' },
+      },
+    ],
+  }
+
+  return (
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <CreateShell config={config} type={type} />
+    </>
+  )
 }

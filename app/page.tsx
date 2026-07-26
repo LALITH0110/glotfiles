@@ -10,16 +10,19 @@ import {
   Terminal,
 } from "lucide-react"
 import ComboBuilder from "@/components/landing/combo-builder"
-import HexRain from "@/components/landing/hex-rain"
+import HexRain from "@/components/landing/hex-rain-lazy"
 import LiveCounter from "@/components/landing/live-counter"
 import SiteFooter from "@/components/landing/site-footer"
 import SiteHeader from "@/components/landing/site-header"
 import { COMBOS, FORMAT_BY_KEY } from "@/lib/polyglot-combos"
 
 export const metadata: Metadata = {
-  title: "glotfiles — one file, every format",
+  // `absolute` opts out of the layout's "%s · glotfiles" template — the brand is
+  // already in this title, so the template would render it twice.
+  title: { absolute: "glotfiles — one file, every format" },
   description:
     "Merge a PDF, image, video, ZIP or HTML file into a single file that stays valid in every one of those formats. No account, no installs, nothing stored.",
+  alternates: { canonical: "/" },
 }
 
 export default function HomePage() {

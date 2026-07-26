@@ -3,6 +3,7 @@ import { ArrowLeft } from "lucide-react"
 import PolyglotCreator from "@/components/polyglot-creator"
 import ReferencePanel from "./reference-panel"
 import { colorForType } from "@/lib/polyglot-limits"
+import { getExplainer } from "@/lib/combo-explainers"
 
 interface FileSlot {
   label: string
@@ -24,6 +25,7 @@ export default function CreateShell({ config, type }: { config: PolyglotConfig; 
   const slots = [config.file1, config.file2, config.file3, config.file4, config.file5].filter(
     Boolean,
   ) as FileSlot[]
+  const explainer = getExplainer(type)
 
   return (
     <div className="min-h-screen bg-white text-zinc-900 antialiased">
@@ -65,12 +67,64 @@ export default function CreateShell({ config, type }: { config: PolyglotConfig; 
         </section>
 
         {/* Work area — one column, full width for the dropzones */}
-        <section className="px-5 pb-20 sm:px-8">
+        <section className="px-5 pb-16 sm:px-8">
           <div className="mx-auto max-w-4xl space-y-8">
             <PolyglotCreator config={config} type={type} />
             <ReferencePanel slots={slots} type={type} />
           </div>
         </section>
+
+        {/* Explainer — unique per combination, and the passage most likely to be
+            quoted by a search or AI engine answering "what is a {X}+{Y} polyglot" */}
+        {explainer && (
+          <section className="border-t border-zinc-100 px-5 py-14 sm:px-8">
+            <div className="mx-auto max-w-4xl">
+              <h2 className="text-balance text-2xl font-semibold tracking-[-0.03em] sm:text-3xl">
+                What is a {config.title.replace(/ Polyglot$/, "")} polyglot?
+              </h2>
+              <p className="mt-4 max-w-2xl text-pretty text-[16px] leading-relaxed text-zinc-600">
+                {explainer.what}
+              </p>
+
+              <div className="mt-10 grid gap-10 sm:grid-cols-2">
+                <div>
+                  <h3 className="text-[15px] font-semibold tracking-[-0.01em]">
+                    How the formats coexist
+                  </h3>
+                  <p className="mt-2.5 text-[15px] leading-relaxed text-zinc-600">
+                    {explainer.mechanism}
+                  </p>
+                </div>
+
+                <div>
+                  <h3 className="text-[15px] font-semibold tracking-[-0.01em]">
+                    Why people build these
+                  </h3>
+                  <ul className="mt-2.5 space-y-2">
+                    {explainer.useCases.map((useCase) => (
+                      <li
+                        key={useCase}
+                        className="flex gap-2 text-[15px] leading-relaxed text-zinc-600"
+                      >
+                        <span className="text-zinc-300">—</span>
+                        <span>{useCase}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </div>
+              </div>
+
+              <p className="mt-10 text-[13px] leading-relaxed text-zinc-500">
+                Files are processed in memory and never stored. Generated polyglots are
+                intended for educational, research and testing use — see{" "}
+                <Link href="/privacy-terms" className="text-zinc-900 underline underline-offset-2">
+                  privacy and terms
+                </Link>
+                .
+              </p>
+            </div>
+          </section>
+        )}
       </main>
     </div>
   )

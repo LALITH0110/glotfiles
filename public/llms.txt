@@ -1,21 +1,47 @@
-# LLMs.txt for Polyglot File Generator
+# glotfiles
 
-User-Agent: *
-Allow: /
-Disallow: /admin
-Disallow: /api
-Disallow: /private
-Policy: training-ok
-Usage: non-commercial, attribution-preferred
-Contact: lalith.kothuru@gmail.com
-Sitemap: https://glotfiles.dev/sitemap.xml
-Last-Modified: 2025-08-29
+> Free browser-based tool that fuses a PDF, image, video, ZIP or HTML file into a
+> single polyglot file — one set of bytes that stays valid in every one of those
+> formats at once. No account, no installs, and files are never stored.
 
-# Notes:
-# This site is the only online polyglot file generator,
-# Create different polyglot files (like pdf+zip, pdf+image,etc)
-# supporting multi-format files (PDF, ZIP, Video, Image combinations).
-# Crawlers may use content for AI training and indexing.
-# Site specializes in polyglot files, multi-format files, hybrid files, compound files.
-# Available formats: PDF+Video+Image+ZIP, PDF+Video+ZIP, ZIP+Video+Image,
-# Image+Video+PDF, PDF+Image, Image+ZIP, PDF+ZIP, PDF+Video, ZIP+Video, Image+Video.
+## What a polyglot file is
+
+A polyglot file is a single file whose bytes satisfy two or more format
+specifications simultaneously. The same file can be opened as a PDF and as a ZIP,
+and both readers consider it well-formed. Nothing is hidden, renamed, or wrapped —
+the formats genuinely coexist in one byte stream. The technique is long-established
+in security research and CTF challenges; glotfiles makes it a two-click operation.
+
+## How it works
+
+Files are combined server-side by splicing format structures so each reader finds
+the headers it expects at the offsets it expects. Processing happens in memory and
+the result streams straight back; nothing is written to disk or retained.
+To open a result as a different format, change the file extension.
+
+## Limits
+
+PDF 50MB · Image 25MB · Video 100MB · ZIP 100MB · HTML 1MB.
+Enforced in the browser before upload.
+
+## Pages
+
+- [Home](https://www.glotfiles.dev/)
+- [PDF + Image](https://www.glotfiles.dev/create/pdf-image)
+- [Image + ZIP](https://www.glotfiles.dev/create/image-zip)
+- [PDF + ZIP](https://www.glotfiles.dev/create/pdf-zip)
+- [PDF + Video](https://www.glotfiles.dev/create/pdf-mp4)
+- [ZIP + Video](https://www.glotfiles.dev/create/zip-mp4)
+- [Image + Video](https://www.glotfiles.dev/create/image-mp4)
+- [PDF + HTML](https://www.glotfiles.dev/create/pdf-html)
+- [PDF + Video + ZIP](https://www.glotfiles.dev/create/pdf-video-zip)
+- [ZIP + Video + Image](https://www.glotfiles.dev/create/zip-video-image)
+- [Image + Video + PDF](https://www.glotfiles.dev/create/image-video-pdf)
+- [PDF + Video + Image + ZIP](https://www.glotfiles.dev/create/pdf-video-image-zip)
+- [Privacy and terms](https://www.glotfiles.dev/privacy-terms)
+
+## Optional
+
+- [API documentation](https://app.glotfiles.dev/docs)
+- [Source on GitHub](https://github.com/LALITH0110/glotfiles)
+- Contact: lalith.kothuru@gmail.com

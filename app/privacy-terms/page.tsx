@@ -4,8 +4,10 @@ import { Button } from "@/components/ui/button"
 import { ArrowLeft, Shield, FileText, Clock, Lock, Users, AlertTriangle } from 'lucide-react'
 
 export const metadata = {
-  title: 'Privacy Policy & Terms of Service - Polyglot File Generator',
-  description: 'Privacy policy and terms of service for the Polyglot File Generator tool',
+  title: 'Privacy & Terms',
+  description:
+    'How glotfiles handles your files: processed in memory, never stored. Plus the terms of use for generated polyglot files.',
+  alternates: { canonical: '/privacy-terms' },
 }
 
 export default function PrivacyTermsPage() {

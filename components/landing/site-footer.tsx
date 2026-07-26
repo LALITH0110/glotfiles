@@ -13,7 +13,8 @@ export default function SiteFooter() {
               <span className="text-[15px] font-semibold tracking-[-0.01em]">glotfiles</span>
             </Link>
             <p className="mt-3 text-[14px] leading-relaxed text-zinc-500">
-              The only online tool for building files that are valid in several formats at once.
+              Build files that are valid in several formats at once — in your browser, with
+              nothing stored.
             </p>
           </div>
 
@@ -21,9 +22,9 @@ export default function SiteFooter() {
             <FooterColumn
               title="Product"
               links={[
-                { label: "Combinations", href: "#combinations" },
-                { label: "How it works", href: "#how-it-works" },
-                { label: "FAQ", href: "#faq" },
+                { label: "Combinations", href: "/#combinations" },
+                { label: "How it works", href: "/#how-it-works" },
+                { label: "FAQ", href: "/#faq" },
               ]}
             />
             <FooterColumn
@@ -41,6 +42,7 @@ export default function SiteFooter() {
             <FooterColumn
               title="More"
               links={[
+                { label: "About", href: "/about" },
                 { label: "Privacy & terms", href: "/privacy-terms" },
                 {
                   label: "Contact",
