@@ -5,7 +5,7 @@ import { useEffect, useRef } from "react"
 /**
  * Ambient hero background: a slowly drifting hex dump in which real file-format
  * magic numbers surface, glow in their format colour, and fade back into the
- * noise — the same signatures the generator actually splices together.
+ * noise. These are the same signatures the generator actually splices together.
  *
  * The static byte field is rendered once into an offscreen tile and blitted each
  * frame, so per-frame work is two drawImage calls plus a handful of fillText.
@@ -83,7 +83,7 @@ export default function HexRain() {
     /**
      * Render the faint, non-animated byte field into an offscreen tile.
      * Built with generous vertical headroom so that the hero growing or
-     * shrinking — the picker card swapping between its states — doesn't force a
+     * shrinking (the picker card swapping between its states) doesn't force a
      * rebuild, which would visibly reshuffle every byte on screen.
      */
     const buildTile = (dpr: number) => {
@@ -128,7 +128,7 @@ export default function HexRain() {
       if (cols <= span) return
 
       // Last column at which the bytes *and* their ASCII gloss still fit on
-      // screen — narrow viewports would otherwise clip the run in half.
+      // screen; narrow viewports would otherwise clip the run in half.
       const maxCol = Math.floor((width - GUTTER - (sig.bytes.length * CELL_W + 52)) / CELL_W)
       if (maxCol < 1) return
 
@@ -250,7 +250,7 @@ export default function HexRain() {
       width = nextWidth
       height = nextHeight
 
-      // Resizing the backing store clears it, which is fine — every frame repaints.
+      // Resizing the backing store clears it, which is fine, every frame repaints.
       canvas.width = Math.round(width * dpr)
       canvas.height = Math.round(height * dpr)
       canvas.style.width = `${width}px`
@@ -266,7 +266,7 @@ export default function HexRain() {
 
       if (mustRebuild) {
         buildTile(dpr)
-        // Cols/rows may have shrunk — drop anything that no longer fits.
+        // Cols/rows may have shrunk, so drop anything that no longer fits.
         active = active.filter((a) => a.row < tileRows && a.col < cols)
       }
 

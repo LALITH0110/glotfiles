@@ -313,7 +313,7 @@ export default function PolyglotCreator({ config, type }: PolyglotCreatorProps) 
                   <p className="text-[14px] text-zinc-600">
                     {isGenerating
                       ? "Fusing your files into a single set of bytes…"
-                      : "Everything's ready — this usually takes a couple of seconds."}
+                      : "Everything's ready. This usually takes a couple of seconds."}
                   </p>
                 )}
               </div>
@@ -379,7 +379,7 @@ export default function PolyglotCreator({ config, type }: PolyglotCreatorProps) 
         </div>
       </section>
 
-      {/* Warning Modal — Radix keeps focus trapping, Escape and scroll locking */}
+      {/* Warning Modal: Radix keeps focus trapping, Escape and scroll locking */}
       <Dialog open={showWarningModal} onOpenChange={setShowWarningModal}>
         <DialogContent className="gap-0 overflow-hidden rounded-2xl border-zinc-200 p-0 sm:max-w-[560px]">
           <div className="p-6">
@@ -442,7 +442,7 @@ function StepHeading({
   return (
     <div className="flex items-baseline justify-between gap-4 border-b border-zinc-100 pb-3">
       <h2 className="font-mono text-[11px] font-medium uppercase tracking-[0.14em] text-zinc-400">
-        {index} — {title}
+        {index} · {title}
       </h2>
       {trailing}
     </div>

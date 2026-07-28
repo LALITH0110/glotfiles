@@ -30,7 +30,7 @@ export default function NotFound() {
           That page doesn&apos;t exist
         </h1>
         <p className="mx-auto mt-4 max-w-md text-pretty text-[16px] leading-relaxed text-zinc-600">
-          The combination you asked for isn&apos;t one we build — or the link is out of date.
+          The combination you asked for isn&apos;t one we build, or the link is out of date.
         </p>
 
         <div className="mt-8 flex flex-col justify-center gap-2.5 sm:flex-row">

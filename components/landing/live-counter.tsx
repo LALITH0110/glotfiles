@@ -20,7 +20,7 @@ export default function LiveCounter() {
         unsubscribe = subscribeToCounter((value) => setCount(value))
       })
       .catch(() => {
-        /* counter is decorative — stay silent */
+        /* counter is decorative, stay silent */
       })
 
     return () => {

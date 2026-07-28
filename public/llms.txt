@@ -1,14 +1,14 @@
 # glotfiles
 
 > Free browser-based tool that fuses a PDF, image, video, ZIP or HTML file into a
-> single polyglot file — one set of bytes that stays valid in every one of those
+> single polyglot file: one set of bytes that stays valid in every one of those
 > formats at once. No account, no installs, and files are never stored.
 
 ## What a polyglot file is
 
 A polyglot file is a single file whose bytes satisfy two or more format
 specifications simultaneously. The same file can be opened as a PDF and as a ZIP,
-and both readers consider it well-formed. Nothing is hidden, renamed, or wrapped —
+and both readers consider it well-formed. Nothing is hidden, renamed, or wrapped;
 the formats genuinely coexist in one byte stream. The technique is long-established
 in security research and CTF challenges; glotfiles makes it a two-click operation.
 

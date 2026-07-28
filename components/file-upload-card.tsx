@@ -82,7 +82,7 @@ export default function FileUploadCard({
             : "border-zinc-200"
       }`}
     >
-      {/* Card head — which slot this is, what it accepts, and its cap */}
+      {/* Card head: which slot this is, what it accepts, and its cap */}
       <div className="flex items-center justify-between gap-3 border-b border-zinc-100 px-4 py-3">
         <div className="flex min-w-0 items-center gap-2">
           {index !== undefined && (

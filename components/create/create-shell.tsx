@@ -30,7 +30,7 @@ export default function CreateShell({ config, type }: { config: PolyglotConfig; 
   return (
     <div className="min-h-screen bg-white text-zinc-900 antialiased">
       <main>
-        {/* Page head — no site nav here; this is a focused task, not a landing page */}
+        {/* Page head: no site nav here; this is a focused task, not a landing page */}
         <section className="px-5 pb-8 pt-8 sm:px-8 sm:pb-10 sm:pt-10">
           <div className="mx-auto max-w-4xl">
             <Link
@@ -42,7 +42,6 @@ export default function CreateShell({ config, type }: { config: PolyglotConfig; 
             </Link>
 
             <h1 className="mt-6 text-balance text-3xl font-semibold tracking-[-0.035em] sm:text-[2.5rem] sm:leading-[1.1]">
-
               {config.title}
             </h1>
             <p className="mt-3 max-w-xl text-pretty text-[16px] leading-relaxed text-zinc-600 sm:text-[17px]">
@@ -66,7 +65,7 @@ export default function CreateShell({ config, type }: { config: PolyglotConfig; 
           </div>
         </section>
 
-        {/* Work area — one column, full width for the dropzones */}
+        {/* Work area: one column, full width for the dropzones */}
         <section className="px-5 pb-16 sm:px-8">
           <div className="mx-auto max-w-4xl space-y-8">
             <PolyglotCreator config={config} type={type} />
@@ -74,7 +73,7 @@ export default function CreateShell({ config, type }: { config: PolyglotConfig; 
           </div>
         </section>
 
-        {/* Explainer — unique per combination, and the passage most likely to be
+        {/* Explainer: unique per combination, and the passage most likely to be
             quoted by a search or AI engine answering "what is a {X}+{Y} polyglot" */}
         {explainer && (
           <section className="border-t border-zinc-100 px-5 py-14 sm:px-8">
@@ -106,7 +105,7 @@ export default function CreateShell({ config, type }: { config: PolyglotConfig; 
                         key={useCase}
                         className="flex gap-2 text-[15px] leading-relaxed text-zinc-600"
                       >
-                        <span className="text-zinc-300">—</span>
+                        <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-zinc-300" />
                         <span>{useCase}</span>
                       </li>
                     ))}
@@ -116,7 +115,7 @@ export default function CreateShell({ config, type }: { config: PolyglotConfig; 
 
               <p className="mt-10 text-[13px] leading-relaxed text-zinc-500">
                 Files are processed in memory and never stored. Generated polyglots are
-                intended for educational, research and testing use — see{" "}
+                intended for educational, research and testing use. See{" "}
                 <Link href="/privacy-terms" className="text-zinc-900 underline underline-offset-2">
                   privacy and terms
                 </Link>

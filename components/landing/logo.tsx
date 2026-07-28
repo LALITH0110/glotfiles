@@ -1,5 +1,5 @@
 /**
- * The glotfiles mark — same artwork as app/icon.svg so the browser tab and the
+ * The glotfiles mark, same artwork as app/icon.svg so the browser tab and the
  * site agree. Keep the two in sync if either changes.
  */
 export default function Logo({ className = "h-7 w-7" }: { className?: string }) {

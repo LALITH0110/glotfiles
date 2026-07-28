@@ -13,7 +13,7 @@ export default function SiteFooter() {
               <span className="text-[15px] font-semibold tracking-[-0.01em]">glotfiles</span>
             </Link>
             <p className="mt-3 text-[14px] leading-relaxed text-zinc-500">
-              Build files that are valid in several formats at once — in your browser, with
+              Build files that are valid in several formats at once, in your browser, with
               nothing stored.
             </p>
           </div>

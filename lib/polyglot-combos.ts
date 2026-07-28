@@ -99,7 +99,7 @@ export const COMBOS: Combo[] = [
     id: "pdf-video-image-zip",
     formats: ["pdf", "video", "image", "zip"],
     title: "PDF + Video + Image + ZIP",
-    description: "The full stack — four valid formats in one set of bytes.",
+    description: "The full stack: four valid formats in one set of bytes.",
   },
 ]
 
