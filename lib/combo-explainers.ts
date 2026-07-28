@@ -2,13 +2,13 @@
  * Per-combination explanatory copy.
  *
  * The generator pages previously carried ~270 words each, almost all UI chrome,
- * with only the title and a one-line description differing between them — eight
+ * with only the title and a one-line description differing between them. Eight
  * of the eleven had no unique prose at all. This gives each page a real answer to
  * "what is this specific combination, and why would anyone make one", which is
  * both the thin-content fix and the passage an AI engine can actually cite.
  *
  * `mechanism` explains the structural trick honestly; `useCases` are the real
- * reasons people build these. Keep them factual — no superlatives.
+ * reasons people build these. Keep them factual, with no superlatives.
  */
 
 export interface ComboExplainer {
@@ -22,7 +22,7 @@ export interface ComboExplainer {
 
 export const COMBO_EXPLAINERS: Record<string, ComboExplainer> = {
   "pdf-image": {
-    what: "A PDF + Image polyglot is one file that a PDF reader opens as a document and an image viewer opens as a picture. Neither application is being tricked or seeing a renamed file — the same bytes genuinely satisfy both the PDF specification and the PNG or JPEG specification at once.",
+    what: "A PDF + Image polyglot is one file that a PDF reader opens as a document and an image viewer opens as a picture. Neither application is being tricked or seeing a renamed file. The same bytes genuinely satisfy both the PDF specification and the PNG or JPEG specification at once.",
     mechanism:
       "Image formats identify themselves from a signature in the first few bytes, while PDF readers scan for the %PDF header near the start of the file and read structure from the trailer at the end. That tolerance leaves room for both structures to occupy one byte stream.",
     useCases: [
@@ -72,7 +72,7 @@ export const COMBO_EXPLAINERS: Record<string, ComboExplainer> = {
     ],
   },
   "image-mp4": {
-    what: "An Image + Video polyglot shows a still image in an image viewer and plays footage in a media player — a genuine dual-format file rather than a thumbnail embedded in metadata.",
+    what: "An Image + Video polyglot shows a still image in an image viewer and plays footage in a media player, a genuine dual-format file rather than a thumbnail embedded in metadata.",
     mechanism:
       "Both formats are identified from structures near the start of the file, so the layout has to interleave carefully: the image signature stays where viewers expect it while the MP4 atom chain remains walkable from its own offset.",
     useCases: [
@@ -92,7 +92,7 @@ export const COMBO_EXPLAINERS: Record<string, ComboExplainer> = {
     ],
   },
   "pdf-video-zip": {
-    what: "A triple polyglot valid as a PDF document, an MP4 video and a ZIP archive at the same time — three complete format structures sharing one file.",
+    what: "A triple polyglot valid as a PDF document, an MP4 video and a ZIP archive at the same time: three complete format structures sharing one file.",
     mechanism:
       "It combines all three tricks: the MP4 atom chain skips unrecognised regions, PDF reads inward from its header and trailer, and ZIP finds its central directory from the end of the file.",
     useCases: [
@@ -104,7 +104,7 @@ export const COMBO_EXPLAINERS: Record<string, ComboExplainer> = {
   "zip-video-image": {
     what: "A triple polyglot that plays as video, displays as an image and extracts as an archive. Three formats, one set of bytes, all independently valid.",
     mechanism:
-      "The image signature sits where viewers look for it, the MP4 atom chain remains walkable, and the ZIP central directory is discovered by scanning backwards — three readers, three entry points, no conflict.",
+      "The image signature sits where viewers look for it, the MP4 atom chain remains walkable, and the ZIP central directory is discovered by scanning backwards: three readers, three entry points, no conflict.",
     useCases: [
       "Packaging a clip, its cover image and its assets as one download",
       "Testing multi-stage media validation pipelines",
@@ -112,7 +112,7 @@ export const COMBO_EXPLAINERS: Record<string, ComboExplainer> = {
     ],
   },
   "image-video-pdf": {
-    what: "A triple polyglot valid as an image, an MP4 video and a PDF document simultaneously — each opens correctly in its own application with no conversion step.",
+    what: "A triple polyglot valid as an image, an MP4 video and a PDF document simultaneously: each opens correctly in its own application with no conversion step.",
     mechanism:
       "The image header stays at the front for viewers, the MP4 atom structure carries the remaining formats in regions media players skip, and the PDF structure is located from its own header and trailer.",
     useCases: [
@@ -124,7 +124,7 @@ export const COMBO_EXPLAINERS: Record<string, ComboExplainer> = {
   "pdf-video-image-zip": {
     what: "The four-format polyglot: one file that is at once a valid PDF, a valid MP4, a valid image and a valid ZIP archive. Four applications, four correct interpretations, one set of bytes.",
     mechanism:
-      "Each format is located differently — image by leading signature, MP4 by its atom chain, PDF by header and trailer, ZIP by scanning back from the end — and those four strategies can be satisfied simultaneously with careful layout.",
+      "Each format is located differently: image by leading signature, MP4 by its atom chain, PDF by header and trailer, ZIP by scanning back from the end, and those four strategies can be satisfied simultaneously with careful layout.",
     useCases: [
       "Demonstrating just how far file-format ambiguity extends",
       "Testing whether a security pipeline detects every format present, not just the first",

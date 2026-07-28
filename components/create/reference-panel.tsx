@@ -6,7 +6,7 @@ interface FileSlot {
 }
 
 /**
- * Reference material — how to open the result, size limits, usage terms.
+ * Reference material: how to open the result, size limits, usage terms.
  * Collapsed by default: it matters *after* you have a file, so it shouldn't
  * compete with the upload flow.
  */
@@ -52,7 +52,7 @@ export default function ReferencePanel({ slots, type }: { slots: FileSlot[]; typ
         <ul className="space-y-2">
           {SECURITY_TERMS.map((term) => (
             <li key={term} className="flex gap-2 text-[13px] leading-relaxed text-zinc-600">
-              <span className="text-zinc-300">—</span>
+              <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-zinc-300" />
               <span>{term}</span>
             </li>
           ))}

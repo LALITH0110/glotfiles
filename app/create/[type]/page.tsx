@@ -99,7 +99,7 @@ export function generateStaticParams() {
 /**
  * Each combination gets its own title, description and canonical. Previously all
  * of these pages inherited the root layout's metadata, so every one of them
- * shipped an identical <title> and description — leaving Google no way to tell
+ * shipped an identical <title> and description, leaving Google no way to tell
  * them apart. The strings already existed in polyglotConfigs; they just weren't
  * wired up.
  */
@@ -114,7 +114,7 @@ export async function generateMetadata({ params }: PageProps): Promise<Metadata>
   const url = `/create/${type}`
   // The layout template appends " · glotfiles", so keep the raw combo title here.
   const title = config.title
-  const description = `${config.description}. Free, in your browser — no account, no installs, and your files are never stored.`
+  const description = `${config.description}. Free, in your browser, with no account, no installs, and your files are never stored.`
 
   return {
     title,

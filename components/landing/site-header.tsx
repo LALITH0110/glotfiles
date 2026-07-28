@@ -13,7 +13,7 @@ const NAV_LINKS = [
 
 /**
  * Sits flush and full-width at the top of the page, then collapses into a
- * floating pill once you scroll — narrower, shorter, tighter, detached from the
+ * floating pill once you scroll: narrower, shorter, tighter, detached from the
  * top edge, and following you down the page.
  *
  * It's `fixed` rather than `sticky` on purpose: a sticky header occupies flow
@@ -32,7 +32,7 @@ export default function SiteHeader({ variant = "landing" }: { variant?: "landing
 
     const update = () => {
       frame = 0
-      // Asymmetric thresholds — it takes more scroll to condense than to expand,
+      // Asymmetric thresholds: it takes more scroll to condense than to expand,
       // so hovering right at the boundary can't oscillate.
       setCondensed((was) => (was ? window.scrollY > 20 : window.scrollY > 48))
     }

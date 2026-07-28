@@ -1,6 +1,6 @@
 import { ImageResponse } from 'next/og'
 
-export const alt = 'glotfiles — one file, every format'
+export const alt = 'glotfiles: one file, every format'
 export const size = { width: 1200, height: 630 }
 export const contentType = 'image/png'
 
@@ -22,7 +22,7 @@ export default async function OpengraphImage() {
           padding: '72px',
         }}
       >
-        {/* Brand row — the two-files mark, redrawn with plain divs */}
+        {/* Brand row: the two-files mark, redrawn with plain divs */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
           <div style={{ display: 'flex', position: 'relative', width: '64px', height: '64px' }}>
             <div

@@ -17,9 +17,9 @@ import SiteHeader from "@/components/landing/site-header"
 import { COMBOS, FORMAT_BY_KEY } from "@/lib/polyglot-combos"
 
 export const metadata: Metadata = {
-  // `absolute` opts out of the layout's "%s · glotfiles" template — the brand is
+  // `absolute` opts out of the layout's "%s · glotfiles" template; the brand is
   // already in this title, so the template would render it twice.
-  title: { absolute: "glotfiles — one file, every format" },
+  title: { absolute: "glotfiles: one file, every format" },
   description:
     "Merge a PDF, image, video, ZIP or HTML file into a single file that stays valid in every one of those formats. No account, no installs, nothing stored.",
   alternates: { canonical: "/" },
@@ -70,7 +70,7 @@ function Hero() {
             {/* The full line wraps below ~420px, so phones get the short form */}
             <span className="text-zinc-600 sm:hidden">The API is live</span>
             <span className="hidden text-zinc-600 sm:inline">
-              The API is live — build polyglots programmatically
+              The API is live: build polyglots programmatically
             </span>
             <ArrowUpRight className="h-3.5 w-3.5 shrink-0 text-zinc-400 transition-transform group-hover:translate-x-0.5 group-hover:-translate-y-0.5" />
           </a>
@@ -128,7 +128,7 @@ function Combinations() {
         <SectionHeading
           eyebrow="Combinations"
           title="Every mix we build"
-          description="Each one is a real, spec-valid file — not a renamed extension or a container trick."
+          description="Each one is a real, spec-valid file, not a renamed extension or a container trick."
         />
 
         <div className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-200 sm:grid-cols-2 lg:grid-cols-3">
@@ -257,7 +257,7 @@ const FEATURES = [
   {
     icon: Layers,
     title: "Spec-valid output",
-    body: "Real polyglots built from format internals — every reader you open it in sees a well-formed file.",
+    body: "Real polyglots built from format internals. Every reader you open it in sees a well-formed file.",
   },
   {
     icon: Terminal,
@@ -312,7 +312,7 @@ function Features() {
 const FAQS = [
   {
     q: "What actually is a polyglot file?",
-    a: "A single file whose bytes are simultaneously valid under two or more format specifications. The same file can be opened as a PDF and as a ZIP, and both readers consider it well-formed — nothing is hidden or renamed.",
+    a: "A single file whose bytes are simultaneously valid under two or more format specifications. The same file can be opened as a PDF and as a ZIP, and both readers consider it well-formed. Nothing is hidden or renamed.",
   },
   {
     q: "Do you keep my files?",
@@ -324,7 +324,7 @@ const FAQS = [
   },
   {
     q: "Which extension should I use on the result?",
-    a: "Any of the formats it contains. Change the extension and the matching application will open it — the bytes on disk stay identical.",
+    a: "Any of the formats it contains. Change the extension and the matching application will open it. The bytes on disk stay identical.",
   },
   {
     q: "Is there an API?",

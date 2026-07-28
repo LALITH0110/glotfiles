@@ -13,14 +13,14 @@ export const FILE_SIZE_LIMITS = {
 
 export const DEFAULT_LIMIT = 25 * 1024 * 1024
 
-/** Compact form used for limits and validation messages — "50MB", "512KB". */
+/** Compact form used for limits and validation messages: "50MB", "512KB". */
 export const formatLimit = (bytes: number): string => {
   if (bytes >= 1024 * 1024) return `${Math.round(bytes / (1024 * 1024))}MB`
   if (bytes >= 1024) return `${Math.round(bytes / 1024)}KB`
   return `${bytes}B`
 }
 
-/** Precise form used when showing a selected file — "1.23 MB". */
+/** Precise form used when showing a selected file: "1.23 MB". */
 export const formatSize = (bytes: number): string => {
   if (bytes === 0) return "0 Bytes"
   const k = 1024
@@ -62,7 +62,7 @@ export const ALL_LIMITS: { type: string; limit: number }[] = [
   { type: "HTML", limit: FILE_SIZE_LIMITS.HTML },
 ]
 
-/** Accent colour per format — matches the landing page palette. */
+/** Accent colour per format, matching the landing page palette. */
 export const TYPE_COLORS: Record<string, string> = {
   pdf: "#E5484D",
   image: "#8E4EC6",

@@ -11,33 +11,33 @@ const Code = ({ children }: { children: ReactNode }) => (
   </code>
 )
 
-/** Shown for every combination — how to actually open the generated file. */
+/** Shown for every combination: how to actually open the generated file. */
 export function GeneralUsage() {
   return (
     <ul className="space-y-2.5 text-[13px] leading-relaxed text-zinc-600">
       <li className="flex gap-2">
-        <span className="text-zinc-300">—</span>
+        <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-zinc-300" />
         <span>
           To access different file types, simply rename the file extension (e.g. <Code>.zip</Code>,{" "}
           <Code>.mp4</Code>, <Code>.jpg</Code>, etc.).
         </span>
       </li>
       <li className="flex gap-2">
-        <span className="text-zinc-300">—</span>
+        <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-zinc-300" />
         <span>
           If your computer can&apos;t open <Code>.zip</Code> files, try using the command line:{" "}
           <Code>unzip filename.zip</Code>
         </span>
       </li>
       <li className="flex gap-2">
-        <span className="text-zinc-300">—</span>
+        <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-zinc-300" />
         <span>
           <Code>.mp4</Code> files may not play in some video players, but work fine with popular ones
           like VLC or QuickTime Player.
         </span>
       </li>
       <li className="flex gap-2">
-        <span className="text-zinc-300">—</span>
+        <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-zinc-300" />
         <span>
           These files are polyglots and may behave differently depending on the software used to open
           them.
@@ -62,24 +62,24 @@ export function TypeGuidance({ type }: { type: string }) {
       {type === "pdf-zip" && (
         <>
           <li className="flex gap-2">
-            <span className="text-zinc-300">—</span>
+            <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-zinc-300" />
             <span>
               <strong className="font-medium text-zinc-900">As PDF:</strong> rename to{" "}
               <Code>.pdf</Code> and open in any PDF viewer.
             </span>
           </li>
           <li className="flex gap-2">
-            <span className="text-zinc-300">—</span>
+            <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-zinc-300" />
             <span>
               <strong className="font-medium text-zinc-900">As ZIP:</strong> rename to{" "}
               <Code>.zip</Code> and use Terminal: <Code>unzip filename.zip</Code>
             </span>
           </li>
           <li className="flex gap-2">
-            <span className="text-zinc-300">—</span>
+            <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-zinc-300" />
             <span>
               <strong className="font-medium text-zinc-900">Note:</strong> use Terminal for ZIP
-              extraction — macOS Archive Utility may not work.
+              extraction. macOS Archive Utility may not work.
             </span>
           </li>
         </>
@@ -87,21 +87,21 @@ export function TypeGuidance({ type }: { type: string }) {
       {type === "pdf-image" && (
         <>
           <li className="flex gap-2">
-            <span className="text-zinc-300">—</span>
+            <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-zinc-300" />
             <span>
               <strong className="font-medium text-zinc-900">As Image:</strong> rename to{" "}
               <Code>.png</Code> or <Code>.jpg</Code> and open in any image viewer.
             </span>
           </li>
           <li className="flex gap-2">
-            <span className="text-zinc-300">—</span>
+            <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-zinc-300" />
             <span>
               <strong className="font-medium text-zinc-900">As PDF:</strong> rename to{" "}
               <Code>.pdf</Code> and open in any PDF viewer.
             </span>
           </li>
           <li className="flex gap-2">
-            <span className="text-zinc-300">—</span>
+            <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-zinc-300" />
             <span>
               <strong className="font-medium text-zinc-900">Note:</strong> the file works as both
               image and PDF depending on the extension.
@@ -112,24 +112,24 @@ export function TypeGuidance({ type }: { type: string }) {
       {type === "image-mp4" && (
         <>
           <li className="flex gap-2">
-            <span className="text-zinc-300">—</span>
+            <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-zinc-300" />
             <span>
               <strong className="font-medium text-zinc-900">As Video:</strong> rename to{" "}
               <Code>.mp4</Code> and open in any video player.
             </span>
           </li>
           <li className="flex gap-2">
-            <span className="text-zinc-300">—</span>
+            <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-zinc-300" />
             <span>
               <strong className="font-medium text-zinc-900">As Image:</strong> rename to{" "}
               <Code>.ico</Code> and open in any image viewer.
             </span>
           </li>
           <li className="flex gap-2">
-            <span className="text-zinc-300">—</span>
+            <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-zinc-300" />
             <span>
               <strong className="font-medium text-zinc-900">Note:</strong> both formats work
-              simultaneously — a true polyglot.
+              simultaneously, a true polyglot.
             </span>
           </li>
         </>

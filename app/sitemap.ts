@@ -4,7 +4,7 @@ import { SITE_URL } from './layout'
 
 /**
  * Generated from COMBOS so a new combination can never be missing from the
- * sitemap again — the previous hand-maintained public/sitemap.xml had silently
+ * sitemap again. The previous hand-maintained public/sitemap.xml had silently
  * omitted /create/pdf-html.
  *
  * Bump this when page content materially changes. It is deliberately a real

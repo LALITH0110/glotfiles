@@ -120,7 +120,7 @@
     @apply border-border outline-ring/50;
   }
   html {
-    /* Landing page is light-mode only — never adopt the OS dark preference. */
+    /* Landing page is light-mode only; never adopt the OS dark preference. */
     color-scheme: light;
     -webkit-font-smoothing: antialiased;
     scroll-behavior: smooth;

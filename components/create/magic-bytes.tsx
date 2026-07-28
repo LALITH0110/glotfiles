@@ -5,7 +5,7 @@ import { useEffect, useState } from "react"
 /**
  * Reads the first bytes of a freshly selected file and renders them as a real
  * hex dump, highlighting the format signature it recognises. It is the same idea
- * the landing hero animates — except these are the user's actual bytes.
+ * the landing hero animates, except these are the user's actual bytes.
  */
 
 interface Signature {
@@ -58,7 +58,7 @@ export default function MagicBytes({ file, tone }: { file: File; tone: string })
         if (!cancelled) setBytes(new Uint8Array(buffer))
       })
       .catch(() => {
-        /* preview is decorative — never block on it */
+        /* preview is decorative, never block on it */
       })
 
     return () => {
@@ -121,11 +121,11 @@ export default function MagicBytes({ file, tone }: { file: File; tone: string })
         <span className="text-[11px] text-zinc-500">
           {signature ? (
             <>
-              Magic bytes recognised —{" "}
+              Magic bytes recognised:{" "}
               <span className="font-medium text-zinc-900">{signature.label}</span>
             </>
           ) : (
-            "Header read — no known signature at offset 0"
+            "Header read: no known signature at offset 0"
           )}
         </span>
       </div>

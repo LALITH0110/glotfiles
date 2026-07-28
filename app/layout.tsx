@@ -8,7 +8,7 @@ import { Analytics } from '@vercel/analytics/next'
 
 /**
  * Canonical origin. The apex (glotfiles.dev) redirects to www, so every absolute
- * URL the site emits — canonicals, OG tags, JSON-LD @ids — must use this host.
+ * URL the site emits (canonicals, OG tags, JSON-LD @ids) must use this host.
  */
 export const SITE_URL = 'https://www.glotfiles.dev'
 
@@ -18,7 +18,7 @@ const SITE_DESCRIPTION =
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
-    default: 'glotfiles — one file, every format',
+    default: 'glotfiles: one file, every format',
     template: '%s · glotfiles',
   },
   description: SITE_DESCRIPTION,
@@ -29,17 +29,17 @@ export const metadata: Metadata = {
     type: 'website',
     siteName: 'glotfiles',
     url: '/',
-    title: 'glotfiles — one file, every format',
+    title: 'glotfiles: one file, every format',
     description: SITE_DESCRIPTION,
     locale: 'en_US',
   },
   twitter: {
     card: 'summary_large_image',
-    title: 'glotfiles — one file, every format',
+    title: 'glotfiles: one file, every format',
     description: SITE_DESCRIPTION,
   },
   // Icons are picked up automatically from app/icon.svg, app/favicon.ico and
-  // app/apple-icon.png — declaring them here as well would emit duplicate tags.
+  // app/apple-icon.png; declaring them here as well would emit duplicate tags.
 }
 
 /**
@@ -47,7 +47,7 @@ export const metadata: Metadata = {
  * next/script) so crawlers see it without executing JavaScript.
  *
  * Deliberately absent: HowTo (rich results removed Sept 2023) for the "How it
- * works" section, and FAQPage — Google retired FAQ rich results for all sites on
+ * works" section, and FAQPage. Google retired FAQ rich results for all sites on
  * 7 May 2026, so the landing page's <details> Q&As earn nothing from markup.
  */
 const siteJsonLd = {

@@ -61,7 +61,7 @@ export default function AboutPage() {
                 glotfiles builds polyglot files: single files whose bytes satisfy two or more
                 format specifications at the same time. One file can be a valid PDF and a valid
                 ZIP, and both readers consider it well-formed. Nothing is renamed, wrapped or
-                hidden — the formats genuinely coexist in the same byte stream.
+                hidden. The formats genuinely coexist in the same byte stream.
               </p>
               <p className="mt-3 text-[16px] leading-relaxed text-zinc-600">
                 It runs in the browser, needs no account, and processes files in memory. Nothing
@@ -83,8 +83,8 @@ export default function AboutPage() {
               </p>
               <p className="mt-3 text-[16px] leading-relaxed text-zinc-600">
                 Those differing strategies leave room for several complete structures to share one
-                file, each discoverable by the reader that cares about it. That is the whole trick
-                — no exploit, no corruption, just formats that tolerate bytes they were not looking
+                file, each discoverable by the reader that cares about it. That is the whole trick:
+                no exploit, no corruption, just formats that tolerate bytes they were not looking
                 for.
               </p>
             </section>
@@ -93,7 +93,7 @@ export default function AboutPage() {
               <h2 className="text-[17px] font-semibold tracking-[-0.015em]">Prior work</h2>
               <p className="mt-3 text-[16px] leading-relaxed text-zinc-600">
                 Polyglot files are not a new discovery. The technique has a long history in
-                security research and CTF challenges — Ange Albertini&apos;s{" "}
+                security research and CTF challenges. Ange Albertini&apos;s{" "}
                 <a
                   href="https://github.com/corkami/pocs"
                   target="_blank"
