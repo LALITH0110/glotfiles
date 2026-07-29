@@ -29,6 +29,12 @@ export interface Combo {
   title: string
   description: string
   featured?: boolean
+  /**
+   * Hidden from the "Every mix we build" grid, but still fully supported: the
+   * page is generated, the builder resolves to it and the sitemap lists it.
+   * Use this to take a combination off the shelf without breaking its URL.
+   */
+  unlisted?: boolean
 }
 
 export const COMBOS: Combo[] = [
@@ -64,6 +70,7 @@ export const COMBOS: Combo[] = [
     formats: ["zip", "video"],
     title: "ZIP + Video",
     description: "An archive that streams like any other clip.",
+    unlisted: true,
   },
   {
     id: "image-mp4",
@@ -101,7 +108,16 @@ export const COMBOS: Combo[] = [
     title: "PDF + Video + Image + ZIP",
     description: "The full stack: four valid formats in one set of bytes.",
   },
+  {
+    id: "pdf-image-video-zip-html",
+    formats: ["pdf", "image", "video", "zip", "html"],
+    title: "PDF + Image + Video + ZIP + HTML",
+    description: "Every format we support, folded into a single file.",
+  },
 ]
+
+/** The combinations shown in the landing page grid. */
+export const LISTED_COMBOS: Combo[] = COMBOS.filter((c) => !c.unlisted)
 
 /** Order-independent identity for a set of formats. */
 export const comboKey = (formats: FormatKey[]): string => [...new Set(formats)].sort().join("+")

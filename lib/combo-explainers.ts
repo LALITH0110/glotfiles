@@ -131,6 +131,16 @@ export const COMBO_EXPLAINERS: Record<string, ComboExplainer> = {
       "Building CTF challenges with several layers to uncover",
     ],
   },
+  "pdf-image-video-zip-html": {
+    what: "The five-format polyglot: one file that a PDF reader opens as a document, an image viewer opens as a picture, a media player plays as video, an archive tool extracts as a ZIP, and a browser renders as a web page. Five applications, five correct interpretations, one set of bytes.",
+    mechanism:
+      "Every format is located by a different rule, and the layout satisfies all five at once. The opening bytes serve as both an image header and a length-prefixed MP4 box that players skip, the HTML document sits inside one of those skipped regions wrapped so browsers render only the markup, the PDF is found from its header near the start and its trailer at the end, and the ZIP central directory is discovered by scanning backwards from the end of the file.",
+    useCases: [
+      "Showing that format detection based on a single signature can be wrong five ways at once",
+      "Testing whether an inspection pipeline enumerates every format in a file or stops at the first match",
+      "Building CTF challenges where each layer discovered reveals another",
+    ],
+  },
 }
 
 export const getExplainer = (type: string): ComboExplainer | undefined =>

@@ -48,7 +48,12 @@ export function GeneralUsage() {
 }
 
 /** Combinations that have extra, format-specific instructions. */
-export const TYPES_WITH_GUIDANCE = ["pdf-zip", "pdf-image", "image-mp4"]
+export const TYPES_WITH_GUIDANCE = [
+  "pdf-zip",
+  "pdf-image",
+  "image-mp4",
+  "pdf-image-video-zip-html",
+]
 
 export function hasTypeGuidance(type: string): boolean {
   return TYPES_WITH_GUIDANCE.includes(type)
@@ -130,6 +135,54 @@ export function TypeGuidance({ type }: { type: string }) {
             <span>
               <strong className="font-medium text-zinc-900">Note:</strong> both formats work
               simultaneously, a true polyglot.
+            </span>
+          </li>
+        </>
+      )}
+      {type === "pdf-image-video-zip-html" && (
+        <>
+          <li className="flex gap-2">
+            <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-zinc-300" />
+            <span>
+              <strong className="font-medium text-zinc-900">As Video:</strong> keep the{" "}
+              <Code>.mp4</Code> extension it downloads with and open it in any video player.
+            </span>
+          </li>
+          <li className="flex gap-2">
+            <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-zinc-300" />
+            <span>
+              <strong className="font-medium text-zinc-900">As PDF:</strong> rename to{" "}
+              <Code>.pdf</Code> and open in any PDF viewer.
+            </span>
+          </li>
+          <li className="flex gap-2">
+            <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-zinc-300" />
+            <span>
+              <strong className="font-medium text-zinc-900">As Image:</strong> rename to{" "}
+              <Code>.ico</Code> and open in any image viewer. The image is carried in the icon
+              header at the start of the file, so <Code>.png</Code> and <Code>.jpg</Code> will not
+              work here.
+            </span>
+          </li>
+          <li className="flex gap-2">
+            <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-zinc-300" />
+            <span>
+              <strong className="font-medium text-zinc-900">As ZIP:</strong> rename to{" "}
+              <Code>.zip</Code> and use Terminal: <Code>unzip filename.zip</Code>
+            </span>
+          </li>
+          <li className="flex gap-2">
+            <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-zinc-300" />
+            <span>
+              <strong className="font-medium text-zinc-900">As HTML:</strong> rename to{" "}
+              <Code>.html</Code> and open it in a browser.
+            </span>
+          </li>
+          <li className="flex gap-2">
+            <span className="mt-[9px] h-1 w-1 shrink-0 rounded-full bg-zinc-300" />
+            <span>
+              <strong className="font-medium text-zinc-900">Note:</strong> five formats is a lot of
+              work for the server. Generation usually takes a minute or two.
             </span>
           </li>
         </>
