@@ -235,8 +235,11 @@ export default function PolyglotCreator({ config, type }: PolyglotCreatorProps) 
     setShowWarningModal(false)
   }
 
+  // Derived from the slot count rather than a chain of config checks, which
+  // stopped at file4 and told five-slot combinations to upload "all four files".
   const missingLabel =
-    config.file4 ? "all four files" : config.file3 ? "all three files" : "both files"
+    ["both files", "all three files", "all four files", "all five files"][slots.length - 2] ??
+    "every file"
 
   return (
     <div className="space-y-10">
@@ -313,7 +316,9 @@ export default function PolyglotCreator({ config, type }: PolyglotCreatorProps) 
                   <p className="text-[14px] text-zinc-600">
                     {isGenerating
                       ? "Fusing your files into a single set of bytes…"
-                      : "Everything's ready. This usually takes a couple of seconds."}
+                      : slots.length > 2
+                        ? "Everything's ready. Combinations this size usually take a minute or two."
+                        : "Everything's ready. This usually takes a couple of seconds."}
                   </p>
                 )}
               </div>

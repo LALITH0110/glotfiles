@@ -14,7 +14,7 @@ import HexRain from "@/components/landing/hex-rain-lazy"
 import LiveCounter from "@/components/landing/live-counter"
 import SiteFooter from "@/components/landing/site-footer"
 import SiteHeader from "@/components/landing/site-header"
-import { COMBOS, FORMAT_BY_KEY } from "@/lib/polyglot-combos"
+import { FORMAT_BY_KEY, LISTED_COMBOS } from "@/lib/polyglot-combos"
 
 export const metadata: Metadata = {
   // `absolute` opts out of the layout's "%s · glotfiles" template; the brand is
@@ -132,7 +132,7 @@ function Combinations() {
         />
 
         <div className="mt-12 grid grid-cols-1 gap-px overflow-hidden rounded-2xl border border-zinc-200 bg-zinc-200 sm:grid-cols-2 lg:grid-cols-3">
-          {COMBOS.map((combo) => (
+          {LISTED_COMBOS.map((combo) => (
             <Link
               key={combo.id}
               href={`/create/${combo.id}`}

@@ -36,16 +36,18 @@ const polyglotConfigs = {
     file3: { label: "Image File", accept: ".png,.jpg,.jpeg", type: "Image" },
     file4: { label: "ZIP File", accept: ".zip", type: "ZIP" },
   },
-  // Commented out for now - advanced feature not implemented in web interface yet
-  // "pdf-image-video-zip-html": {
-  //   title: "PDF + Image + Video + ZIP + HTML Polyglot",
-  //   description: "Ultimate 5-file polyglot with HTML embedded in MP4 skip atom",
-  //   file1: { label: "PDF File", accept: ".pdf", type: "PDF" },
-  //   file2: { label: "Image File", accept: ".png,.jpg,.jpeg", type: "Image" },
-  //   file3: { label: "Video File", accept: ".mp4,.mov,.avi", type: "Video" },
-  //   file4: { label: "ZIP File", accept: ".zip", type: "ZIP" },
-  //   file5: { label: "HTML File", accept: ".html,.htm", type: "HTML" },
-  // },
+  // The slot order here is the API contract, not a display choice: the server
+  // assigns roles by field name (file1..file5), never by sniffing the upload, and
+  // rejects the request outright unless all five are present.
+  "pdf-image-video-zip-html": {
+    title: "PDF + Image + Video + ZIP + HTML Polyglot",
+    description: "Five-format polyglot with HTML embedded in an MP4 skip atom",
+    file1: { label: "PDF File", accept: ".pdf", type: "PDF" },
+    file2: { label: "Image File", accept: ".png,.jpg,.jpeg", type: "Image" },
+    file3: { label: "Video File", accept: ".mp4,.mov,.avi", type: "Video" },
+    file4: { label: "ZIP File", accept: ".zip", type: "ZIP" },
+    file5: { label: "HTML File", accept: ".html,.htm", type: "HTML" },
+  },
   "zip-mp4": {
     title: "ZIP + Video Polyglot",
     description: "Merge a ZIP archive with an MP4 video file",
