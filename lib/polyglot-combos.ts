@@ -85,6 +85,12 @@ export const COMBOS: Combo[] = [
     description: "A PDF that renders as a live web page in the browser.",
   },
   {
+    id: "html-zip",
+    formats: ["html", "zip"],
+    title: "HTML + ZIP",
+    description: "A web page that unzips into the project it documents.",
+  },
+  {
     id: "pdf-video-zip",
     formats: ["pdf", "video", "zip"],
     title: "PDF + Video + ZIP",
