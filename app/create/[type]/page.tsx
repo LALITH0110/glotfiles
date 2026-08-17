@@ -22,6 +22,13 @@ const polyglotConfigs = {
     file1: { label: "PDF File", accept: ".pdf", type: "PDF" },
     file2: { label: "ZIP File", accept: ".zip", type: "ZIP" },
   },
+  "html-zip": {
+    title: "HTML + ZIP Polyglot",
+    description: "Combine an HTML page with a ZIP archive",
+    note: "Your archive is preserved exactly as uploaded. Zip the folder itself, not the files inside it, if you want everything to extract into one folder.",
+    file1: { label: "HTML File", accept: ".html,.htm", type: "HTML" },
+    file2: { label: "ZIP File", accept: ".zip", type: "ZIP" },
+  },
   "pdf-mp4": {
     title: "PDF + Video Polyglot",
     description: "Combine a PDF document with an MP4 video file",

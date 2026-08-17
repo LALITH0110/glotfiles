@@ -14,6 +14,11 @@ interface FileSlot {
 export interface PolyglotConfig {
   title: string
   description: string
+  /**
+   * Optional practical caveat shown under the description. Kept separate from
+   * `description`, which feeds the page metadata and JSON-LD.
+   */
+  note?: string
   file1: FileSlot
   file2: FileSlot
   file3?: FileSlot
@@ -47,6 +52,12 @@ export default function CreateShell({ config, type }: { config: PolyglotConfig; 
             <p className="mt-3 max-w-xl text-pretty text-[16px] leading-relaxed text-zinc-600 sm:text-[17px]">
               {config.description}
             </p>
+
+            {config.note ? (
+              <p className="mt-2 max-w-xl text-pretty text-[14px] leading-relaxed text-zinc-500">
+                {config.note}
+              </p>
+            ) : null}
 
             <div className="mt-5 flex flex-wrap items-center gap-1.5">
               {slots.map((slot, i) => (

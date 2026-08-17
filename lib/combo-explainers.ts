@@ -91,6 +91,16 @@ export const COMBO_EXPLAINERS: Record<string, ComboExplainer> = {
       "Research into browser and PDF parser leniency",
     ],
   },
+  "html-zip": {
+    what: "An HTML + ZIP polyglot renders as a web page in a browser and extracts as a complete archive in any unzip tool. The page can document exactly the files the same download contains, because the documentation and the archive are one file rather than two.",
+    mechanism:
+      "ZIP readers find an archive by scanning backwards from the end of the file for the central directory, so the archive does not need to start at byte zero. That leaves the front of the file free for a full HTML document, and the archive's stored offsets are rewritten to account for the page sitting in front of it.",
+    useCases: [
+      "Shipping a project's README and its source archive as a single download",
+      "Handing over a dataset alongside the page that explains its columns and licence",
+      "Checking whether an upload filter reads a file's actual structure or trusts its extension",
+    ],
+  },
   "pdf-video-zip": {
     what: "A triple polyglot valid as a PDF document, an MP4 video and a ZIP archive at the same time: three complete format structures sharing one file.",
     mechanism:
