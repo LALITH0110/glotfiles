@@ -1,20 +1,19 @@
 /**
- * The glotfiles mark, same artwork as app/icon.svg so the browser tab and the
- * site agree. Keep the two in sync if either changes.
+ * Common: two file silhouettes joined by a shared stepped seam.
+ * Vector geometry keeps the mark crisp at header and footer sizes.
  */
 export default function Logo({ className = "h-7 w-7" }: { className?: string }) {
   return (
-    <svg viewBox="0 0 32 32" className={className} role="img" aria-label="glotfiles">
-      <rect width="32" height="32" rx="7.5" fill="#0A0A0A" />
-      <rect x="5.5" y="4" width="13.5" height="18" rx="2.4" fill="#FF5C35" />
-      <path
-        d="M15.4 9.5h6.2l4.9 4.9v11.2A2.4 2.4 0 0 1 24.1 28h-8.7A2.4 2.4 0 0 1 13 25.6V11.9a2.4 2.4 0 0 1 2.4-2.4Z"
-        fill="#fff"
-        stroke="#0A0A0A"
-        strokeWidth="2.4"
-        strokeLinejoin="round"
-      />
-      <path d="M21.6 9.5 26.5 14.4h-4.9Z" fill="#FF5C35" />
+    <svg
+      viewBox="0 0 104 108"
+      className={className}
+      role="img"
+      aria-label="glotfiles"
+    >
+      <g fill="currentColor">
+        <path d="M14 0H46a7 7 0 0 1 5 2l12 12a7 7 0 0 1 2 5v28H38a8 8 0 0 0-8 8v27H14A14 14 0 0 1 0 68V14A14 14 0 0 1 14 0Z" />
+        <path d="M74 27h6a7 7 0 0 1 5 2l17 17a7 7 0 0 1 2 5v43a14 14 0 0 1-14 14H55a7 7 0 0 1-5-2L40 96a7 7 0 0 1-2-5V56h28a8 8 0 0 0 8-8V27Z" />
+      </g>
     </svg>
   )
 }
