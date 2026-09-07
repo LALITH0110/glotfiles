@@ -1,4 +1,6 @@
 import { ImageResponse } from 'next/og'
+import { readFile } from 'node:fs/promises'
+import { join } from 'node:path'
 
 export const alt = 'glotfiles: one file, every format'
 export const size = { width: 1200, height: 630 }
@@ -6,9 +8,12 @@ export const contentType = 'image/png'
 
 /**
  * Social preview card. Generated at build time rather than shipped as a static
- * PNG so it stays in sync with the brand marks in app/icon.svg.
+ * PNG. The brand image uses the same Common PNG as the favicon and device icons.
  */
 export default async function OpengraphImage() {
+  const logo = await readFile(join(process.cwd(), 'public/icon-512.png'))
+  const logoSrc = `data:image/png;base64,${logo.toString('base64')}`
+
   return new ImageResponse(
     (
       <div
@@ -22,33 +27,9 @@ export default async function OpengraphImage() {
           padding: '72px',
         }}
       >
-        {/* Brand row: the two-files mark, redrawn with plain divs */}
+        {/* Brand row uses the approved Common artwork. */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '20px' }}>
-          <div style={{ display: 'flex', position: 'relative', width: '64px', height: '64px' }}>
-            <div
-              style={{
-                position: 'absolute',
-                left: 0,
-                top: 0,
-                width: '40px',
-                height: '52px',
-                borderRadius: '8px',
-                background: '#FF5C35',
-              }}
-            />
-            <div
-              style={{
-                position: 'absolute',
-                left: '22px',
-                top: '12px',
-                width: '40px',
-                height: '52px',
-                borderRadius: '8px',
-                background: '#FFFFFF',
-                border: '4px solid #0A0A0A',
-              }}
-            />
-          </div>
+          <img src={logoSrc} alt="" width={96} height={96} style={{ borderRadius: '14px' }} />
           <div style={{ fontSize: 40, fontWeight: 600, color: '#FFFFFF', letterSpacing: '-0.02em' }}>
             glotfiles
           </div>
