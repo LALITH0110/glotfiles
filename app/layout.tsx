@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     title: 'glotfiles: one file, every format',
     description: SITE_DESCRIPTION,
   },
-  // Icons are picked up automatically from app/icon.svg, app/favicon.ico and
+  // Icons are picked up automatically from app/icon.png, app/favicon.ico and
   // app/apple-icon.png; declaring them here as well would emit duplicate tags.
 }
 
@@ -60,9 +60,9 @@ const siteJsonLd = {
       url: `${SITE_URL}/`,
       logo: {
         '@type': 'ImageObject',
-        url: `${SITE_URL}/apple-icon.png`,
-        width: 180,
-        height: 180,
+        url: `${SITE_URL}/icon-512.png`,
+        width: 512,
+        height: 512,
       },
       sameAs: ['https://github.com/LALITH0110/glotfiles'],
       founder: {
