@@ -1,6 +1,6 @@
 import type { MetadataRoute } from 'next'
 import { COMBOS } from '@/lib/polyglot-combos'
-import { SITE_URL } from './layout'
+import { SITE_URL } from '@/lib/site'
 
 /**
  * Generated from COMBOS so a new combination can never be missing from the

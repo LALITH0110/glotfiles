@@ -1,20 +1,16 @@
-import type { Metadata } from 'next'
+import type { Metadata, Viewport } from 'next'
 import { GeistSans } from 'geist/font/sans'
 import { GeistMono } from 'geist/font/mono'
-import Script from 'next/script'
 import './globals.css'
 import { Toaster } from 'sonner'
 import { Analytics } from '@vercel/analytics/next'
+import GoogleAnalytics from '@/components/analytics/google-analytics'
+import { SITE_DESCRIPTION, SITE_URL } from '@/lib/site'
 
 /**
  * Canonical origin. The apex (glotfiles.dev) redirects to www, so every absolute
  * URL the site emits (canonicals, OG tags, JSON-LD @ids) must use this host.
  */
-export const SITE_URL = 'https://www.glotfiles.dev'
-
-const SITE_DESCRIPTION =
-  'Merge a PDF, image, video, ZIP or HTML file into a single file that stays valid in every one of those formats. No account, no installs, nothing stored.'
-
 export const metadata: Metadata = {
   metadataBase: new URL(SITE_URL),
   title: {
@@ -40,6 +36,15 @@ export const metadata: Metadata = {
   },
   // Icons are picked up automatically from app/icon.png, app/favicon.ico and
   // app/apple-icon.png; declaring them here as well would emit duplicate tags.
+}
+
+// Next supplies this default automatically, but keeping it explicit makes the
+// mobile contract visible to non-browser SEO crawlers as well as to maintainers.
+export const viewport: Viewport = {
+  width: 'device-width',
+  initialScale: 1,
+  viewportFit: 'cover',
+  colorScheme: 'light',
 }
 
 /**
@@ -117,23 +122,9 @@ html {
         />
       </head>
       <body>
-        {/* lazyOnload, not afterInteractive: GTM is 166kB with ~42% unused and
-            was implicated in long tasks during the LCP window. Analytics does
-            not need to run before the page has painted. */}
-        <Script
-          src="https://www.googletagmanager.com/gtag/js?id=G-M6CR35K4VZ"
-          strategy="lazyOnload"
-        />
-        <Script id="google-analytics" strategy="lazyOnload">
-          {`
-            window.dataLayer = window.dataLayer || [];
-            function gtag(){dataLayer.push(arguments);}
-            gtag('js', new Date());
-            gtag('config', 'G-M6CR35K4VZ');
-          `}
-        </Script>
         {children}
         <Toaster />
+        <GoogleAnalytics />
         <Analytics />
       </body>
     </html>
