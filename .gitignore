@@ -10,6 +10,10 @@ out/
 # production
 build/
 
+# local design explorations and test fixtures
+/public/logo-options/
+/testfiles/
+
 # debug
 npm-debug.log*
 yarn-debug.log*

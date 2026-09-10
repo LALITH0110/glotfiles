@@ -76,24 +76,27 @@ function Hero() {
           </a>
 
           <h1 className="mt-7 max-w-4xl text-balance text-[2.75rem] font-semibold leading-[1.02] tracking-[-0.042em] sm:text-6xl lg:text-[4.5rem]">
-            One file that is
-            <br className="hidden sm:block" />{" "}
-            <span className="relative whitespace-nowrap">
-              every file
-              <svg
-                aria-hidden
-                viewBox="0 0 320 14"
-                preserveAspectRatio="none"
-                className="absolute -bottom-1.5 left-0 h-[10px] w-full text-[#FF5C35]"
-              >
-                <path
-                  d="M2 9.5C58 4 122 2.5 190 4.5c50 1.5 92 4 128 6.5"
-                  fill="none"
-                  stroke="currentColor"
-                  strokeWidth="3.5"
-                  strokeLinecap="round"
-                />
-              </svg>
+            <span className="sr-only">glotfiles: one file, every format</span>
+            <span aria-hidden>
+              One file that is
+              <br className="hidden sm:block" />{" "}
+              <span className="relative whitespace-nowrap">
+                every file
+                <svg
+                  aria-hidden
+                  viewBox="0 0 320 14"
+                  preserveAspectRatio="none"
+                  className="absolute -bottom-1.5 left-0 h-[10px] w-full text-[#FF5C35]"
+                >
+                  <path
+                    d="M2 9.5C58 4 122 2.5 190 4.5c50 1.5 92 4 128 6.5"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="3.5"
+                    strokeLinecap="round"
+                  />
+                </svg>
+              </span>
             </span>
           </h1>
 

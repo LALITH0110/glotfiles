@@ -2,7 +2,7 @@ import type { Metadata } from "next"
 import Link from "next/link"
 import { ArrowLeft, ArrowUpRight } from "lucide-react"
 import SiteFooter from "@/components/landing/site-footer"
-import { SITE_URL } from "@/app/layout"
+import { SITE_URL } from "@/lib/site"
 
 export const metadata: Metadata = {
   title: "About",

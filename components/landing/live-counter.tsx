@@ -2,6 +2,8 @@
 
 import { useEffect, useState } from "react"
 
+const COUNTER_DELAY_MS = 12_000
+
 /**
  * Live global generation count. Firebase is imported lazily so it stays out of
  * the landing page's initial bundle, and the whole thing degrades to nothing if
@@ -13,18 +15,37 @@ export default function LiveCounter() {
   useEffect(() => {
     let unsubscribe: (() => void) | undefined
     let cancelled = false
+    let idleCallback: number | undefined
 
-    import("@/lib/firebase")
-      .then(({ subscribeToCounter }) => {
-        if (cancelled) return
-        unsubscribe = subscribeToCounter((value) => setCount(value))
-      })
-      .catch(() => {
-        /* counter is decorative, stay silent */
-      })
+    // Firebase's Firestore client is intentionally kept out of the initial
+    // loading window. The counter is decorative; parsing its ~260 kB chunk
+    // while the page is becoming interactive creates avoidable long tasks on
+    // slower phones. It still becomes live shortly after the useful UI does.
+    const timeout = window.setTimeout(() => {
+      const subscribe = () => {
+        import("@/lib/firebase")
+          .then(({ subscribeToCounter }) => {
+            if (cancelled) return
+            unsubscribe = subscribeToCounter((value) => setCount(value))
+          })
+          .catch(() => {
+            /* counter is decorative, stay silent */
+          })
+      }
+
+      if ("requestIdleCallback" in window) {
+        idleCallback = window.requestIdleCallback(subscribe, { timeout: 2_000 })
+      } else {
+        subscribe()
+      }
+    }, COUNTER_DELAY_MS)
 
     return () => {
       cancelled = true
+      window.clearTimeout(timeout)
+      if (idleCallback !== undefined && "cancelIdleCallback" in window) {
+        window.cancelIdleCallback(idleCallback)
+      }
       unsubscribe?.()
     }
   }, [])

@@ -1,5 +1,5 @@
 import type { MetadataRoute } from 'next'
-import { SITE_URL } from './layout'
+import { SITE_URL } from '@/lib/site'
 
 /**
  * Replaces the hand-written public/robots.txt, which pointed its Sitemap

@@ -1,4 +1,19 @@
-@import 'tailwindcss';
+/*
+ * Tailwind v4 scans the whole repository by default. This project keeps an
+ * archived redesign and a complete shadcn component library beside the live
+ * app, so the default scan emitted styles for code that can never reach a
+ * production route. Keep the generated CSS tied to the actual route graph.
+ */
+@import 'tailwindcss' source(none);
+@source './';
+@source '../components/create';
+@source '../components/landing';
+@source '../components/file-upload-card.tsx';
+@source '../components/go-back-button.tsx';
+@source '../components/polyglot-creator.tsx';
+@source '../components/ui/button.tsx';
+@source '../components/ui/card.tsx';
+@source '../components/ui/dialog.tsx';
 @import 'tw-animate-css';
 
 @custom-variant dark (&:is(.dark *));

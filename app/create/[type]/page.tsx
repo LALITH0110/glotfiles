@@ -1,7 +1,7 @@
 import type { Metadata } from "next"
 import { notFound } from "next/navigation"
 import CreateShell from "@/components/create/create-shell"
-import { SITE_URL } from "@/app/layout"
+import { SITE_URL } from "@/lib/site"
 
 const polyglotConfigs = {
   "pdf-image": {
