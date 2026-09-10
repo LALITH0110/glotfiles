@@ -1,10 +1,16 @@
 "use client"
 
 import { useEffect, useState } from "react"
+import dynamic from "next/dynamic"
 import Script from "next/script"
 
 const MEASUREMENT_ID = "G-M6CR35K4VZ"
 const ANALYTICS_DELAY_MS = 12_000
+
+const VercelAnalytics = dynamic(
+  () => import("@vercel/analytics/next").then(({ Analytics }) => Analytics),
+  { ssr: false },
+)
 
 /**
  * Analytics is useful after the product is interactive, not while the browser
@@ -35,6 +41,7 @@ export default function GoogleAnalytics() {
           gtag('config', '${MEASUREMENT_ID}');
         `}
       </Script>
+      <VercelAnalytics />
     </>
   )
 }

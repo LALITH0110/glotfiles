@@ -1,11 +1,23 @@
 import type { Metadata, Viewport } from 'next'
-import { GeistSans } from 'geist/font/sans'
-import { GeistMono } from 'geist/font/mono'
+import localFont from 'next/font/local'
 import './globals.css'
-import { Toaster } from 'sonner'
-import { Analytics } from '@vercel/analytics/next'
 import GoogleAnalytics from '@/components/analytics/google-analytics'
 import { SITE_DESCRIPTION, SITE_URL } from '@/lib/site'
+
+const geistSans = localFont({
+  src: '../node_modules/geist/dist/fonts/geist-sans/Geist-Variable.woff2',
+  display: 'swap',
+  variable: '--font-geist-sans',
+  weight: '100 900',
+})
+
+const geistMono = localFont({
+  src: '../node_modules/geist/dist/fonts/geist-mono/GeistMono-Variable.woff2',
+  display: 'swap',
+  preload: false,
+  variable: '--font-geist-mono',
+  weight: '100 900',
+})
 
 /**
  * Canonical origin. The apex (glotfiles.dev) redirects to www, so every absolute
@@ -107,15 +119,8 @@ export default function RootLayout({
   children: React.ReactNode
 }>) {
   return (
-    <html lang="en">
+    <html lang="en" className={`${geistSans.className} ${geistSans.variable} ${geistMono.variable}`}>
       <head>
-        <style>{`
-html {
-  font-family: ${GeistSans.style.fontFamily};
-  --font-geist-sans: ${GeistSans.style.fontFamily};
-  --font-geist-mono: ${GeistMono.style.fontFamily};
-}
-        `}</style>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
@@ -123,9 +128,7 @@ html {
       </head>
       <body>
         {children}
-        <Toaster />
         <GoogleAnalytics />
-        <Analytics />
       </body>
     </html>
   )

@@ -126,7 +126,7 @@ function Hero() {
 
 function Combinations() {
   return (
-    <section id="combinations" className="scroll-mt-20 border-t border-zinc-100 px-5 py-20 sm:px-8 sm:py-24">
+    <section id="combinations" className="defer-offscreen scroll-mt-20 border-t border-zinc-100 px-5 py-20 sm:px-8 sm:py-24">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Combinations"
@@ -216,7 +216,7 @@ function HowItWorks() {
   return (
     <section
       id="how-it-works"
-      className="scroll-mt-20 border-t border-zinc-100 bg-zinc-50/60 px-5 py-20 sm:px-8 sm:py-24"
+      className="defer-offscreen scroll-mt-20 border-t border-zinc-100 bg-zinc-50/60 px-5 py-20 sm:px-8 sm:py-24"
     >
       <div className="mx-auto max-w-6xl">
         <SectionHeading
@@ -273,7 +273,7 @@ const FEATURES = [
 
 function Features() {
   return (
-    <section className="border-t border-zinc-100 px-5 py-20 sm:px-8 sm:py-24">
+    <section className="defer-offscreen border-t border-zinc-100 px-5 py-20 sm:px-8 sm:py-24">
       <div className="mx-auto max-w-6xl">
         <SectionHeading
           eyebrow="Why glotfiles"
@@ -337,7 +337,7 @@ const FAQS = [
 
 function Faq() {
   return (
-    <section id="faq" className="scroll-mt-20 border-t border-zinc-100 bg-zinc-50/60 px-5 py-20 sm:px-8 sm:py-24">
+    <section id="faq" className="defer-offscreen scroll-mt-20 border-t border-zinc-100 bg-zinc-50/60 px-5 py-20 sm:px-8 sm:py-24">
       <div className="mx-auto max-w-3xl">
         <SectionHeading eyebrow="FAQ" title="Questions, answered" align="left" />
 

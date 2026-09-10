@@ -4,7 +4,7 @@ import Logo from "./logo"
 
 export default function SiteFooter() {
   return (
-    <footer className="border-t border-zinc-100 px-5 py-12 sm:px-8">
+    <footer className="defer-offscreen border-t border-zinc-100 px-5 py-12 sm:px-8">
       <div className="mx-auto max-w-6xl">
         <div className="flex flex-col gap-8 sm:flex-row sm:items-start sm:justify-between">
           <div className="max-w-xs">
@@ -125,4 +125,3 @@ function FooterColumn({
     </div>
   )
 }
-

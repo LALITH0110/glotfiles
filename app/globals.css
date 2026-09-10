@@ -14,8 +14,6 @@
 @source '../components/ui/button.tsx';
 @source '../components/ui/card.tsx';
 @source '../components/ui/dialog.tsx';
-@import 'tw-animate-css';
-
 @custom-variant dark (&:is(.dark *));
 
 :root {
@@ -155,6 +153,14 @@
   }
 }
 
+/* Skip initial layout and paint for landing-page sections that begin well below
+   the viewport. Chromium renders them before they approach the screen, while
+   the intrinsic size keeps scrolling stable during that first pass. */
+.defer-offscreen {
+  content-visibility: auto;
+  contain-intrinsic-size: auto 900px;
+}
+
 /* Hero hex-dump backdrop reveal */
 @keyframes hexFadeIn {
   from {
@@ -177,8 +183,58 @@
   }
 }
 
+/* Only the upload dialog uses the generic animation package. Keeping its two
+   tiny transitions here avoids shipping the package's full utility catalog on
+   every route, including the landing page. */
+@keyframes dialogOverlayIn {
+  from {
+    opacity: 0;
+  }
+}
+
+@keyframes dialogOverlayOut {
+  to {
+    opacity: 0;
+  }
+}
+
+@keyframes dialogContentIn {
+  from {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+}
+
+@keyframes dialogContentOut {
+  to {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(0.95);
+  }
+}
+
+[data-slot='dialog-overlay'][data-state='open'] {
+  animation: dialogOverlayIn 150ms ease-out;
+}
+
+[data-slot='dialog-overlay'][data-state='closed'] {
+  animation: dialogOverlayOut 150ms ease-in;
+}
+
+[data-slot='dialog-content'][data-state='open'] {
+  animation: dialogContentIn 200ms ease-out;
+}
+
+[data-slot='dialog-content'][data-state='closed'] {
+  animation: dialogContentOut 200ms ease-in;
+}
+
 @media (prefers-reduced-motion: reduce) {
   [class*="animate-[byteIn"] {
+    animation: none !important;
+  }
+
+  [data-slot='dialog-overlay'],
+  [data-slot='dialog-content'] {
     animation: none !important;
   }
 }
