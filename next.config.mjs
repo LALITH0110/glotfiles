@@ -46,6 +46,12 @@ const securityHeaders = [
 ]
 
 const nextConfig = {
+  experimental: {
+    // The generated global stylesheet is small enough to inline after source
+    // pruning. This removes the landing page's last render-blocking round trip,
+    // which is disproportionately expensive on Lighthouse's mobile network.
+    inlineCss: true,
+  },
   eslint: {
     ignoreDuringBuilds: true,
   },
